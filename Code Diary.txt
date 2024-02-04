@@ -1,0 +1,93 @@
+Main Function
+Started coding with headers(stdio.h) and included argument counter and argument variable, 
+Then created a file handle variable. 
+Imported text file and source selected as command line argument.
+Created if statement to print file open failure. 
+These were the first steps of coding. The next step was counting words function.
+Calling functions was challenging, I tried several times by changing the way I used them and on most occasions tried using global variables and global functions. So, I assigned each and every function to a single variable and used it whenever I wanted. 
+But it was not working. Then I used fseek to fix that and later on I changed it to rewise. Then it worked properly.
+https://youtu.be/JwaCVY23nhc?si=Ks4DXjTzCUdpAMpY
+ 
+
+
+Int wordcount function
+Created function as int and passed parameters of file handle to use it in this function.
+Created character, wordcounter, and word variables.
+The purpose of creating character variables is to put characters after reading the text file.
+Wordcounter is to count words.
+The word variable is to put successful word find while reading the text file.
+Created a while loop and it reads the file using fgetc function reading each and every character of the text file until it ends(EOF).
+Used isspace to read all whitespaces, but somehow the text file includes words separated without spaces and with commas or dots, I have to read them also. So, while statement includes them too.
+Used this C Program to Count Characters, Words and Lines in a File - QnA Plus website using searching on Google to find this way. For the rest of this function, I followed that method.
+I have commented the process of that function in the code.
+
+Int frequency function
+Created function as usual. 
+Followed steps of https://youtu.be/1OZMcC0euic?si=9VmeCdjC5MFN7yMR this video. But it says it for use in strings. So, I used those steps and converted that method for use it in text file. I used only what I needed, Such as, in video it calculate percentage of each character. I did not use that. 
+
+
+
+Substring Function
+I used these references to do this upto some point. But I had to change it several times because It didn’t give any output. Then after I used the https://youtu.be/yvquaNW5IpQ?list=PLkjV_9KOeOj86KQwz-SeRSROZGPUpqiCV&t=338  this way to fix it.
+fscanf -https://www.geeksforgeeks.org/scanf-and-fscanf-in-c/
+strstr() Function in C - Scaler Topics
+
+substring- strstr - https://www.geeksforgeeks.org/strstr-in-ccpp/
+
+Reverse function 
+
+used this method to do this. Also, the code we wrote in the last assignment(Pointers) helped to do. 
+Challenges – In here in the while loop, I had to keep a character space for a null character. 
+I realized that after watching this video - https://youtu.be/yvquaNW5IpQ?list=PLkjV_9KOeOj86KQwz-SeRSROZGPUpqiCV&t=338
+
+
+Reversesame Function(PALINDROME)
+reverse same - https://www.geeksforgeeks.org/c-program-check-given-string-palindrome/
+used this method to do. But I had to convert the method to read and write it to use in file reading. 
+Test cases
+0303270m@falcon:~$ make
+gcc -Wall -Wextra -pedantic -o A6 A6.o
+0303270m@falcon:~$ ./A6 text.txt
+Total of words in the text file is: 12
+-----------------------------
+Letter    Count
+******************************
+a         4
+b         1
+c         1
+d         2
+e         3
+f         1
+g         1
+h         2
+i         1
+j         1
+k         1
+l         1
+m         3
+n         1
+o         6
+p         1
+q         1
+r         4
+s         3
+t         2
+u         2
+v         1
+w         1
+x         1
+y         1
+z         1
+0
+Reverse of text:
+Reverse:  ehT kciuq nworb xof spmuj revo eht yzal god radar moom,sas
+-----------------------------
+radar is a palindrome..
+radar is a palindrome..
+No Palindrome words!!!
+-----------------------------
+Enter word to search:
+./A6 l.txt
+Search not found!!!
+0303270m@falcon:~$ ./A6 dsd
+Text file open error!!!
